@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Side Panel Info</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.css" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+  crossorigin=""/>
+
+    <link rel="stylesheet" href="../src/L.Control.Sidebar.css" />
+    
+    <!--[if lte IE 8]><link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" /><![endif]-->
+
+    <style type="text/css"></style>
+
+<style>
+    body {
+        padding: 0;
+        margin: 0;
+    }
+
+    html, body, #map {
+        height: 100%;
+    }
+
+    .lorem {
+        font-style: italic;
+        color: #AAA;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="sidebar">
+        <h1 style="text-align:center; font-size: 12px;">-- Click the point on map to fill the data --</h1>
+
+        <div class="sidebar">
+            
+            <br>
+            <b style="text-align:left; font-size: 18px; color:#175B81; font-weight:bold; ">Company Name:</b>
+            <div style="text-align:left; font-size: 14px;" class="CompanyName"></div>
+            <br/>
+            <b style="text-align:left; font-size: 18px; color:#175B81; font-weight:bold; ">Neighborhood:</b>
+            <div style="text-align:left; font-size: 14px;" class="Neighborhood"></div>
+            <br/>
+            <b style="text-align:left; font-size: 18px; color:#175B81; font-weight:bold; ">Address:</b>
+            <div style="text-align:left; font-size: 14px;" class="Address"></div>
+            <br/>
+            <b style="text-align:left; font-size: 18px; color:#175B81; font-weight:bold; ">Phone Number:</b>
+            <div style="text-align:left; font-size: 14px;" class="PhoneNumber"></div>
+            <br/>
+            <b style="text-align:left; font-size: 18px; color:#175B81; font-weight:bold; ">Primary Description:</b>
+            <div style="text-align:left; font-size: 14px;" class="PrimaryDescription"></div>
+            <br/>
+            <b style="text-align:left; font-size: 18px; color:#175B81; font-weight:bold; ">Cuisine Type:</b>
+            <div style="text-align:left; font-size: 14px;" class="CuisineType"></div>
+            <br/>
+            <b style="text-align:left; font-size: 18px; color:#175B81; font-weight:bold; ">Employee Size:</b>
+            <div style="text-align:left; font-size: 14px;" class="EmployeeSize"></div>
+            <br/>
+            <b style="text-align:left; font-size: 18px; color:#175B81; font-weight:bold; ">Year Appeared:</b>
+            <div style="text-align:left; font-size: 14px;" class="YearAppeared"></div>
+            <br/>
+            <b style="text-align:left; font-size: 18px; color:#175B81; font-weight:bold; ">Square Footage:</b>
+            <div style="text-align:left; font-size: 14px;" class="SquareFootage"></div>
+            <br/>
+            <b style="text-align:left; font-size: 18px; color:#175B81; font-weight:bold; ">Sales Volume:</b>
+            <div style="text-align:left; font-size: 14px;" class="SalesVolume"></div>
+            <br/>
+            <b style="text-align:left; font-size: 18px; color:#175B81; font-weight:bold; ">Price:</b>
+            <div style="text-align:left; font-size: 14px;" class="Price"></div>
+            <br/>
+            <b style="text-align:left; font-size: 18px; color:#175B81; font-weight:bold; ">Rating:</b>
+            <div style="text-align:left; font-size: 14px;" class="Ratings"></div>
+            <br/>
+            <b style="text-align:left; font-size: 18px; color:#175B81; font-weight:bold; ">Reviewer:</b>
+            <div style="text-align:left; font-size: 14px;" class="Reviewers"></div>
+            <br/>
+            <b style="text-align:left; font-size: 18px; color:#175B81; font-weight:bold; ">Credit Score:</b>
+            <div style="text-align:left; font-size: 14px;" class="CreditScore"></div>
+            <br/>
+            <b style="text-align:left; font-size: 18px; color:#175B81; font-weight:bold; ">Website:</b>
+            <div style="text-align:left; font-size: 14px;" class="Website"></div>
+        </div>
+
+        <!-- <p style="text-align:left; font-size: 24px; color:#175B81; font-weight:bold; "> Food </p>
+        <table  style="width:90%; ">
+            <tr>
+            <td id='pict' ALIGN='center'; > </td>
+            <td id='pict2' ALIGN='center';> </td>
+            </tr> 
+            <tr>
+            <th ALIGN='left'>League</th>
+            <td id='f1'></td>
+            </tr> 
+            <tr>
+            <th ALIGN='left'>Team</th>
+            <td id='f2'></td>
+            </tr>
+            <tr>
+            <th ALIGN='left'>Address</th>
+            <td id='f3'></td>
+            </tr>
+            <tr>
+            <th ALIGN='left'>Team</th>
+            <td id='f4'></td>
+            </tr>
+            <tr>
+            <th ALIGN='left'>Address</th>
+            <td id='f5'></td>
+            </tr>
+            <tr>
+            <th ALIGN="left">Website</th>
+            <td id="f6"><a href="#"></a></td>
+                </tr></tbody></table> -->
+    </div>
+
+    <div id="dg" style="z-index: 9999; position: fixed ! important; left:30px;top: 20px;">
+        <table width=""100% style="position: absolute; width:500px; right: 20px; top: 50px;">
+
+        <svg>
+     
+        <text x="15" y="28" style="fill:black;" font-family="
+       rockwell" font-size="30"stroke="white 1px">Chinatown Story 
+            <tspan x="20" y="45" font-size="10px">Then&Now&Future</tspan> 
+
+          </text>
+
+          <a href ="https://github.mit.edu/pages/6894-sp20/A4-ChinatownStory.html/"><image x="20" y="60" xlink:href="pic/iconcircle-05.png" width="40" height="40"/></a>
+          <a href ="index.html"><image x="70" y="60" xlink:href="pic/iconcircle-06.png" width="40" height="40"/></a>
+          
+ 
+            </svg>
+        </table>
+        </div>
+
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="../src/L.Control.Sidebar.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+    <script>
+
+        var url = 'https://raw.githubusercontent.com/KaiArch2014/6.894a4/master/src/chinatown.json';  
+
+        var map = L.map('map').setView([42.353396, -71.061981], 16);
+
+        L.tileLayer('https://api.mapbox.com/styles/v1/zoeyzhu/ck8d75c283p0j1itmy7uhufsn/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 20,
+            tileSize: 512,
+            zoomOffset: -1,
+            accessToken: 'pk.eyJ1Ijoiem9leXpodSIsImEiOiJjazF2bGNzNmQwaWl1M2NxZ3kxNGJodDgxIn0.tDIH5cVr0SlDHxl6O4t4bA'
+        }).addTo(map);
+
+
+
+        var smallIcon = new L.Icon({
+            iconUrl: '../src/noun_Food court_2793853.svg',
+            iconRetinaUrl: '../src/noun_Food court_2793853.svg',
+            iconSize:    [40, 64],
+            iconAnchor:  [19, 49],
+            popupAnchor: [4, -40],
+            shadowSize:  [41, 41]
+        });
+
+
+        $.getJSON(url, function(data) {
+            console.log(data);
+  
+            L.geoJson(data, {
+            pointToLayer: function(feature, latlng) {
+                console.log(latlng, feature);
+                return L.marker(latlng, {
+                icon: smallIcon
+                });
+            },
+            onEachFeature: onEachFeature
+            }).addTo(map);
+        });
+        
+
+        function onEachFeature(feature, layer) {
+            console.log(feature);
+            layer.bindPopup(feature.properties.CompanyName);
+            layer.on('mouseover', function (e) {
+                this.openPopup();
+            });
+            layer.on('mouseout', function (e) {
+                this.closePopup();
+            });
+            layer.on('click', function () {
+            sidebar.toggle();
+            });
+            layer.on('click', function(e) {
+                $(".CompanyName").html(feature.properties.CompanyName);
+                $(".Neighborhood").html(feature.properties.Neighborhood);
+                $(".Address").html(feature.properties.Address);
+                $(".PhoneNumber").html(feature.properties.PhoneNumber);
+                $(".PrimaryDescription").html(feature.properties.PrimaryDescription);
+                $(".CuisineType").html(feature.properties.CuisineType);
+                $(".EmployeeSize").html(feature.properties.EmployeeSize);
+                $(".YearAppeared").html(feature.properties.YearAppeared);
+                $(".SquareFootage").html(feature.properties.SquareFootage);
+                $(".SalesVolume").html(feature.properties.SalesVolume);
+                $(".Price").html(feature.properties.Price);
+                $(".Reviewers").html(feature.properties.Reviewers);
+                $(".Ratings").html(feature.properties.Ratings);
+                $(".CreditScore").html(feature.properties.CreditScore);
+                $(".Website").html(feature.properties.Website);
+            });
+
+        }
+
+        var sidebar = L.control.sidebar('sidebar', {
+            closeButton: true,
+            position: 'right'
+        });
+        map.addControl(sidebar);
+
+
+        setTimeout(function () {
+            sidebar.hide();
+        }, 500);
+
+        // var marker = L.marker([lat, lng]).addTo(map).on('click', function () {
+        //     sidebar.toggle();
+        // });
+
+        map.on('click', function () {
+            sidebar.hide();
+        })
+
+        sidebar.on('show', function () {
+            console.log('Sidebar will be visible.');
+        });
+
+        sidebar.on('shown', function () {
+            console.log('Sidebar is visible.');
+        });
+
+        sidebar.on('hide', function () {
+            console.log('Sidebar will be hidden.');
+        });
+
+        sidebar.on('hidden', function () {
+            console.log('Sidebar is hidden.');
+        });
+
+        L.DomEvent.on(sidebar.getCloseButton(), 'click', function () {
+            console.log('Close button clicked.');
+        });
+
+        
+    </script>
+
+</body>
+</html>

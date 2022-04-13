@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Chinatown Story</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
+    
+    <!--scrolling story telling-->
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+    <script src="https://unpkg.com/scrollama"></script>
+
+    <!--CSS for all-->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style2.css">
+    <link rel="stylesheet" type="text/css" href="css/win.css">
+    <script src="js/bar.js"></script>
+   
+    
+    <!--mapbox GL JS-->
+	<script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
+    
+
+    <!--D3 package2-->
+<script src="http://d3js.org/d3.v4.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
+
+<!-- D3.js -->	
+<script src="https://d3js.org/d3.v3.js"></script>
+	
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+
+<!-- Open Sans & CSS -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:700,400,300" rel='stylesheet' type='text/css'>
+ 
+</head>
+
+
+
+<body>
+
+
+
+<svg width="100%" height=“50px”>
+
+
+
+
+    </svg>
+
+
+    <div id="dg" style="z-index: 9999; position: fixed ! important; left:30px;top: 20px;">
+        <table width=""100% style="position: absolute; width:500px; right: 20px; top: 50px;">
+
+        <svg>
+     
+        <text x="15" y="28" style="fill:black;" font-family="
+       rockwell" font-size="30"stroke="white 1px">Chinatown Story 
+            <tspan x="20" y="45" font-size="10px">Then&Now&Future</tspan> 
+
+          </text>
+
+          <a href ="index.html"><image x="20" y="60" xlink:href="pic/iconcircle-05.png" width="40" height="40"/></a>
+          <a href ="sidebar/examples/index.html"><image x="70" y="60" xlink:href="pic/iconcircle-06.png" width="40" height="40"/></a>
+          <!--<a href ="sidebar/examples/index.html"><image x="120" y="60" xlink:href="pic/iconcircle-07.png" width="40" height="40"/></a>-->
+          
+      
+    
+ 
+            </svg>
+        </table>
+        </div>
+
+        <button id="myBtn"><img src='pic/iconcircle-07.png'x="120" y="60"width="40" height="40"></button>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              
+              <H2>User Research 01</H2>
+              <p>1.	I often go to Chinatown to taste different restaurants there. However, there are so many restaurants that have similar name and I’m not so familiar to Chinese cuisine. Anyway, it is hard to pick a restaurant when I get there. With this website, which focus more on the Chinese restaurants, makes me feel confident when I need to recommend a Chinese restaurant to my friends than Yelp and Google. Another reason that I choose to use this website is that it contains some stories of Chinatown and this helps me a lot.
+              </BR>2.	When I first time saw this website, the beautiful map catches my eyes. Using map to tell the story is a wise choice. You can have a big view of whole world Chinatowns and then zoom in. Boston Chinatown is unique, and this website tells a fantasy story to prove my thought.
+            </br> 3.	I think add some photos of the restaurants will be a good future feature. More important is that, if you could add the stories of the restaurants and how hard they work to provide the costumers such wonderful food is a great way to make the website complete.
+                </p>
+
+                <H2>User Research 02</H2>
+
+                <p>1.I think the information contained in this web-based interactive map is integrated and especially focused on the food industry around Chinatown as well as downtown of the Great Boston Area. Go through this website gave me direct information so that I on longer need to filter those other than related to food, however, one flaw I would say is that it seems not being up-to-date as the Yelp or Google. 
+                </br>2.	I personally like this website and I think the logic of its storytelling is overall making sense. It is no denying that even intelligent functions are included in Google, Yelp or TripAdvisor, however their algorithm still make mistakes when we would like to specially search for one topic/category. This interactive map with illustrative charts has shown us Boston residents what we expected to know about the food related information for Chinatown and its neighborhoods which is indeed usable and useful. 
+            </br> 3. I hope this website could have a function of the filter where a slider can help to show the makers of certain restaurants/markets according to their open time, so that we users could use this website as a tool to find the open restaurant around Chinatown. Another suggestion is about a presentation of the peak seasons and rush hours, which I think would help us to made decisions for when to go and how to avoid spending time to wait in line.
+                    
+                    </p>
+
+
+              <script src="js/bar.js"></script>
+            </div>
+            </div>
+        
+
+
+
+    <svg width="100%" height="700px">
+
+        <image xlink:href="pic/Chinatown_1.png" x="0" y="-133px" height="900px" width="97%"/>
+        <rect x="30" y="325" width="260px" height="200px" fill="white" opacity="0.5"/>
+      
+        <text x="50" y="350" style="fill:black;" font-family="
+        rockwell" font-size="12">Chinatown Story 
+             <tspan x="50" y="370" font-size="8px">In the recent years, Chinatown’s Asian population in the</tspan> 
+             <tspan x="50" y="390" font-size="8px">eastern part of North America has been rapidly declined </tspan>
+             <tspan x="50" y="400" font-size="8px">because of the surging housing prices, family-owned </tspan> 
+             <tspan x="50" y="410" font-size="8px">restaurants and stores are shutting down, leaving behind  </tspan> 
+             <tspan x="50" y="420" font-size="8px">empty storefronts that are pending to be replaced by  </tspan> 
+             <tspan x="50" y="430" font-size="8px">boutiques and fashion shops. According to a research  </tspan> 
+             <tspan x="50" y="440" font-size="8px">from Asian American Legal Defense and Education Fund,  </tspan> 
+             <tspan x="50" y="450" font-size="8px">from 2000 to 2010, the Asians living in Chinatown has  </tspan> 
+             <tspan x="50" y="460" font-size="8px">declined in a high rate, New York is from 48% to 45%,  </tspan> 
+             <tspan x="50" y="470" font-size="8px">Boston’s 57% to 46% and Philadelphia’s 49% to 30%,  </tspan> 
+             <tspan x="50" y="480" font-size="8px">where the ratio of white increased. 
+            </tspan> 
+
+             
+             
+        </svg>
+        
+    
+        <script type="application/javascript">
+            function draw() {
+              var canvas = document.getElementById("canvas");
+              if (canvas.getContext) {
+                var ctx = canvas.getContext("2d");
+        
+                ctx.fillStyle = "rgb(200,0,0)";
+                ctx.fillRect (10, 10, 55, 50);
+        
+                ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+                ctx.fillRect (30, 30, 55, 50);
+              }
+            }
+          </script>
+
+
+
+
+   
+
+
+<div id="map"></div>
+<div id="story"></div>
+<!--pages how it works-->
+
+<script src="./config.js"></script>
+
+
+<!--scrolling map -->
+
+
+
+
+<script>
+
+
+var layerTypes = {
+    'fill': ['fill-opacity'],
+    'line': ['line-opacity'],
+    'circle': ['circle-opacity', 'circle-stroke-opacity'],
+    'symbol': ['icon-opacity', 'text-opacity'],
+    'raster': ['raster-opacity'],
+    'fill-extrusion': ['fill-extrusion-opacity']
+}
+
+var alignments = {
+    'left': 'lefty',
+    'center': 'centered',
+    'right': 'righty'
+}
+
+function getLayerPaintType(layer) {
+    var layerType = map.getLayer(layer).type;
+    return layerTypes[layerType];
+}
+
+function setLayerOpacity(layer) {
+    var paintProps = getLayerPaintType(layer.layer);
+    paintProps.forEach(function(prop) {
+        map.setPaintProperty(layer.layer, prop, layer.opacity);
+    });
+}
+
+var story = document.getElementById('story');
+var features = document.createElement('div');
+features.classList.add(alignments[config.alignment]);
+features.setAttribute('id', 'features');
+
+var header = document.createElement('div');
+
+if (config.title) {
+    var titleText = document.createElement('h1');
+    titleText.innerText = config.title;
+    header.appendChild(titleText);
+}
+
+if (config.subtitle) {
+    var subtitleText = document.createElement('h2');
+    subtitleText.innerText = config.subtitle;
+    header.appendChild(subtitleText);
+}
+
+if (config.byline) {
+    var bylineText = document.createElement('p');
+    bylineText.innerText = config.byline;
+    header.appendChild(bylineText);
+}
+
+if (header.innerText.length > 0) {
+    header.classList.add(config.theme);
+    header.setAttribute('id', 'header');
+    story.appendChild(header);
+}
+
+config.chapters.forEach((record, idx) => {
+    var container = document.createElement('div');
+    var chapter = document.createElement('div');
+    
+    if (record.title) {
+        var title = document.createElement('h3');
+        title.innerText = record.title;
+        chapter.appendChild(title);
+    }
+    
+    if (record.image) {
+        var image = new Image();  
+        image.src = record.image;  
+        chapter.appendChild(image);
+    }
+    
+    if (record.description) {
+        var story = document.createElement('p');
+        story.innerHTML = record.description;
+        chapter.appendChild(story);
+    }
+
+    container.setAttribute('id', record.id);
+    container.classList.add('step');
+    if (idx === 0) {
+        container.classList.add('active');
+    }
+
+    chapter.classList.add(config.theme);
+    container.appendChild(chapter);
+    features.appendChild(container);
+});
+
+story.appendChild(features);
+
+var footer = document.createElement('div');
+
+if (config.footer) {
+    var footerText = document.createElement('p');
+    footerText.innerHTML = config.footer;
+    footer.appendChild(footerText);
+}
+
+if (footer.innerText.length > 0) {
+    footer.classList.add(config.theme);
+    footer.setAttribute('id', 'footer');
+    story.appendChild(footer);
+}
+
+mapboxgl.accessToken = config.accessToken;
+
+const transformRequest = (url) => {
+    const hasQuery = url.indexOf("?") !== -1;	  
+    const suffix = hasQuery ? "&pluginName=journalismScrollytelling" : "?pluginName=journalismScrollytelling";	  
+    return {
+      url: url + suffix
+    }	  
+}
+
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: config.style,
+    center: config.chapters[0].location.center,
+    zoom: config.chapters[0].location.zoom,
+    bearing: config.chapters[0].location.bearing,
+    pitch: config.chapters[0].location.pitch,
+    scrollZoom: false,
+    transformRequest: transformRequest
+});
+
+var marker = new mapboxgl.Marker();
+if (config.showMarkers) {
+    marker.setLngLat(config.chapters[0].location.center).addTo(map);
+}
+
+// instantiate the scrollama
+var scroller = scrollama();
+
+map.on("load", function() {
+    // setup the instance, pass callback functions
+    scroller
+    .setup({
+        step: '.step',
+        offset: 0.5,
+        progress: true
+    })
+    .onStepEnter(response => {
+        var chapter = config.chapters.find(chap => chap.id === response.element.id);
+        response.element.classList.add('active');
+        map.flyTo(chapter.location);
+        if (config.showMarkers) {
+            marker.setLngLat(chapter.location.center);
+        }
+        if (chapter.onChapterEnter.length > 0) {
+            chapter.onChapterEnter.forEach(setLayerOpacity);
+        }
+    })
+    .onStepExit(response => {
+        var chapter = config.chapters.find(chap => chap.id === response.element.id);
+        response.element.classList.remove('active');
+        if (chapter.onChapterExit.length > 0) {
+            chapter.onChapterExit.forEach(setLayerOpacity);
+        }
+    });
+});
+
+
+
+// setup resize event
+window.addEventListener('resize', scroller.resize);
+
+
+</script>
+
+
+<!--Litao's Scatter-->
+<svg width="100" height="100" >
+
+
+    </svg>
+   
+    <div id="cnt" class="container-fluid text-center">
+		<div class="row_scatter">
+			<h5 style="color: #3B3B3B;font-family: Futura;">Rates and Credit Scores of Chinatown Restaurant</h5>
+			<h6 style="color: #A6A6A6;font-family: Futura;">Click the cuisine and select the restaurant to check information</h6>
+			<div class="col-sm-9">
+				<div id="chart"></div>
+            </div>
+            
+			<div id = "legend" class="col-sm-3" style="padding-right: 150px; padding-left: 0px;">
+				<div class="legendTitle" style="font-size: 12px;font-family: Futura; text-align:center;">CUISINE</div>
+				<div id="legend"></div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/restaurant.js"></script>
+    <script src="js/script.js"></script>
+
+
+
+
+    <svg width="500" height="100">
+    </svg>
+
+
+    <svg width="150" height="5">
+
+
+    </svg>
+    <button class="button01">
+        <a href="sidebar/examples/index.html">
+            <span class="am-icon-trash-o"></span> EXPLORE CHINATOWN MAP</a></button>
+
+            <div class="wrapper">
+                <div class="content"></div>
+                <div class="footer"></div>
+         
+
+
+</body>
+</html>
