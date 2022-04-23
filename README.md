@@ -14,8 +14,8 @@ We use [Leaflet.js](https://leafletjs.com/) and [Mapbox API](https://www.mapbox.
 One design about the interactive map is that we were considering weather use popup windows to show the detailed information when the user’s mouse hover on a marker, while, we eventually choose to use the side panel to present these information by user clicking the marker. We believe in this way the layout is more user friendly and the panel would not just disappear if they want to point on the information in the panel 
 
 ## Project Group
-* Illustration & Storytelling : Zoey-Ziyuan Zhu
-* Website: Zoey-Ziyuan Zhu
+* Illustration & Storytelling : [Zoey-Ziyuan Zhu](https://iam-zy.com/)
+* Website: [Zoey-Ziyuan Zhu](https://iam-zy.com/)
 * D3.js: Litao Yan
 * Location Selection: Kaihong Gao
 
