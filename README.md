@@ -1,7 +1,7 @@
 # Chinatown Story
 
 > View the ChinaTown Story in [your browser](https://zy-zhu.github.io/Chinatown-Handbook/)
-[img src='pic/image-asset.png' width=400]
+[<img src="pic/image-asset.png" width=100%>]
 
 ## Design rationale
 Through this project, we want to provide the users an opportunity to better know food industry of the Chinatown and its neighborhood near downtown Boston. At this point, we want to show some information that may be already available on Google or Yelp’s App, then add our own research and analysis of these dataset we are using (also combined with the Ssaki Chinatown project ）
